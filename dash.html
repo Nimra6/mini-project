@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f2f2f2;
+    }
+    .container {
+        max-width: 500px;
+        margin: 20px auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    input[type="text"],
+    textarea {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+    button {
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    button:hover {
+        background-color: #0056b3;
+    }
+    .blog-post {
+        display: none;
+        border-top: 2px solid #007bff;
+        margin-top: 20px;
+        padding-top: 20px;
+    }
+    .blog-post h2 {
+        color: #007bff;
+    }
+</style>
+</head>
+<body>
+    <header>
+        <h1>Personal Blogging App</h1>
+    </header>
+<div class="container">
+    <h2>Dashboard</h2>
+    <input type="text" id="placeholderInput" placeholder="Placeholder text">
+    <textarea id="userInput" rows="4" placeholder="What's on your mind?"></textarea>
+    <button onclick="publishBlog()">Publish Blog</button>
+
+    <div class="blog-post" id="blogPost">
+        <h2>Your Blog Post</h2>
+        <p id="placeholderContent"></p>
+        <p id="userContent"></p>
+    </div>
+</div>
+
+<script>
+    function publishBlog() {
+        var placeholderContent = document.getElementById("placeholderInput").value;
+        var userContent = document.getElementById("userInput").value;
+
+        document.getElementById("placeholderContent").textContent = placeholderContent;
+        document.getElementById("userContent").textContent = userContent;
+
+        // Show the blog post
+        document.getElementById("blogPost").style.display = "block";
+    }
+</script>
+
+</body>
+</html>
